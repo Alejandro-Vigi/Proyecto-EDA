@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/alejandro/Escritorio/Proyecto EDA/Proyecto-EDA'
+ 
+mkdir -p output
+ 
+gcc -Wall -Wextra -g -Iinclude -c src/PNodo.c  -o src/PNodo.o
+gcc -Wall -Wextra -g -Iinclude -c src/CNodo.c  -o src/CNodo.o
+gcc -Wall -Wextra -g -Iinclude -c src/main.c  -o src/main.o
+gcc -Wall -Wextra -g -Iinclude -o output/main src/PNodo.o src/CNodo.o src/main.o  -Llib
+echo Executing 'all' complete!
+make: Leaving directory '/home/alejandro/Escritorio/Proyecto EDA/Proyecto-EDA'
+ 
