@@ -11,8 +11,8 @@ typedef struct Pila
 
 Pila* pila_vacia();
 bool push(Pila*, int);
-int pop(Pila*);
 bool es_vacia(Pila *);
 bool anular(Pila*);
+void imprimir_pila(Pila *);
 
 #endif

@@ -4,14 +4,14 @@
 
 typedef struct CNODO
 {
-    char operador;
+    int numero;
     struct CNODO *sig;
-    struct CNODO *ant;
 } CNODO;
 
-CNODO *crear_nodo(char);
+
+CNODO *crear_nodo(int);
 CNODO *borrar_nodo(CNODO*);
-bool actualizar_nodo(CNODO*, char);
+bool actualizar_nodo(CNODO*, int);
 
 #endif
 

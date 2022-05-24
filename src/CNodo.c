@@ -2,17 +2,16 @@
 #include <stdlib.h>
 
 
-CNODO *crear_nodo(char operador){
+CNODO *crear_nodo(int numero){
     CNODO *nuevo = (CNODO*)malloc(sizeof(CNODO));
-    nuevo->ant = NULL;
     nuevo->sig = NULL;
-    nuevo->operador = operador;
+    nuevo->numero = numero;
     return nuevo;
 }
 
 CNODO *borrar_nodo(CNODO *n){
     if(n!=NULL){
-        if(n->sig == NULL && n->ant == NULL){
+        if(n->sig == NULL){
             free(n);
             return NULL;
         }
@@ -21,9 +20,9 @@ CNODO *borrar_nodo(CNODO *n){
     return NULL;
 }
 
-bool actualizar_nodo(CNODO *n, char operador){
+bool actualizar_nodo(CNODO *n, int numero){
     if(n!=NULL){
-        n->operador = operador;
+        n->numero = numero;
         return true;
     }
     return false;

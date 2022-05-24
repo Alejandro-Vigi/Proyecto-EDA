@@ -2,15 +2,18 @@
 #define __COLA_H_
 #include "CNODO.h"
 
-struct cola{
-    CNODO* _frente;
-    CNODO* _final;
+typedef struct Cola
+{
     int lon;
-};
+    CNODO* primero;
+    CNODO* ultimo;
+} Cola;
 
-typedef struct _cola cola;
+Cola* crear_cola();
+void encolar(Cola*, int);
+void desencolar(Cola*);
+void imprimir_cola(Cola*);
 
-cola* 
 
 
 

@@ -1,44 +1,48 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "Cola.h"
+#include "Pila.h"
+
+
+int menu();
 
 int main()
 {
-	int eleccion, menu=0;
-	system("cls");
-	
+
+	int  op = 0,info;
+	Cola *c;
+	Pila *p;
 	do{
-
-	printf("*--------------------------------------------------*\n");
-	printf("*-----------------------Menú-----------------------*\n");
-	printf("*1.- Notación infija a postfija--------------------*\n");
-	printf("*2.- Salir-----------------------------------------*\n");
-	printf("*--------------------------------------------------*\n");
-	printf("*Ingrese su elección: ");
-	scanf("%d", &eleccion);
-
-	switch(eleccion){
-
+		op = menu();
+		switch (op)
+		{
 		case 1:
-			printf("Caso 1");
-			menu++;
-
-		break;
-
+			c = crear_cola();
+			break;
 		case 2:
-			printf("Caso 2");
-			menu++;
-
-		break;
-
+			printf("Ingresa el dato a insertar en la Cola\n");
+			scanf("%d", &info);
+			encolar(c, info);
+			imprimir_cola(c);
+			break;
+		case 3:
+			desencolar(c);
+			imprimir_cola(c);
+			break;
 		default:
-			printf("Verifique su elección");
-
-		break;
-	}
-
-	}while(menu==0);
-
+			break;
+		}
+	}while(op!=6);
 
 	return (0);
+}
+
+
+int menu(){
+	int opcion;
+	printf("Selecciona una opción\n");
+	printf("1. Crear Cola\n");
+	printf("2. Encolar\n");
+	printf("3. Desencolar\n");
+	scanf("%d", &opcion);
+	return opcion;
 }

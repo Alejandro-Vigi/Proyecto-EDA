@@ -5,7 +5,7 @@
 
 typedef struct PNODO
 {
-    int numero;
+    int operador;
     struct PNODO *sig;
     struct PNODO *ant;
 } PNODO;
