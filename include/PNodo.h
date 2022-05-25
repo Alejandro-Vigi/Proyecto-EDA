@@ -5,13 +5,13 @@
 
 typedef struct PNODO
 {
-    int operador;
+    char operador;
     struct PNODO *sig;
     struct PNODO *ant;
 } PNODO;
 
-PNODO *crear_nodo_pila(int);
+PNODO *crear_nodo_pila(char);
 PNODO *borrar_nodo_pila(PNODO*);
-bool actualizar_nodo_pila(PNODO*, int);
+bool actualizar_nodo_pila(PNODO*, char);
 
 #endif

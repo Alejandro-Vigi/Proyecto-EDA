@@ -1,7 +1,7 @@
 #include "PNodo.h"
 #include <stdlib.h>
 
-PNODO* crear_nodo_pila(int operador){
+PNODO* crear_nodo_pila(char operador){
     PNODO *nuevo = (PNODO*)malloc(sizeof(PNODO));
     nuevo->ant = NULL;
     nuevo->sig = NULL;
@@ -20,7 +20,7 @@ PNODO* borrar_nodo_pila(PNODO *n){
     return NULL;
 }
 
-bool actualizar_nodo_pila(PNODO *n, int operador){
+bool actualizar_nodo_pila(PNODO *n,  char operador){
     if(n!=NULL){
         n->operador = operador;
         return true;

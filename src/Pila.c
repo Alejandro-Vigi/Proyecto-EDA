@@ -8,14 +8,15 @@ Pila* pila_vacia(){
     p->log = 0;
     return p;
 }
-bool push(Pila* p, int numero){
+bool push(Pila* p, char operador){
     if(p->log == 0){
-        PNODO *nuevo = crear_nodo_pila(numero);
+        PNODO *nuevo = crear_nodo_pila(operador);
         p->fondo= p->cima = nuevo;
         p->log++;
         return true;
     }else if(p->log != 0){
-        PNODO *nuevo = crear_nodo_pila(nuevo);
+        PNODO *nuevo = crear_nodo_pila(operador);
+        p->cima->sig = p->fondo;
         p->fondo = nuevo;
         p->log++;
         return true;

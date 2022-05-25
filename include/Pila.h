@@ -10,7 +10,7 @@ typedef struct Pila
 }Pila;
 
 Pila* pila_vacia();
-bool push(Pila*, int);
+bool push(Pila*, char);
 bool es_vacia(Pila *);
 bool anular(Pila*);
 void imprimir_pila(Pila *);
