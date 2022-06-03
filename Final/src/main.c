@@ -1,14 +1,26 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "Cola.h"
 #include "Pila.h"
 
+/**
+ * @brief Realizado el 24/05/2022
+ * 
+ * Osnaya Martinez Emmanuel
+ * Palacios Barcelos Juan Antonio
+ * Romero Molina David
+ * Vigi Garduño Marco Alejandro
+ * 
+ */
 
+//Prototipo de funciones
+void notacionFinal(Cola *c, Pila * p);
 int menu();
 int menu2();
 
 int main()
 {
-
+	//Declarar variables
 	int  op = 0,numero=0, opcion = 0 ;
 	char operador= '\0';
 	Cola *c;
@@ -27,23 +39,21 @@ int main()
 				{
 				case 1:
 					printf("Introduce el numero:\n");
-					scanf("%d", numero);
-					encolar(c, numero);
-					imprimir_cola(c);
+					scanf("%d", &numero);
+					encolar(c,numero);
 					break;
 				case 2:
-					printf("Introdcue el operador\n:");
-					scanf("%s", operador);
+					printf("Introduce el operador:\n");
+					scanf("%s", &operador);
 					push(p, operador);
-					imprimir_pila(p);
 					break;
+				case 3:
+					notacionFinal(c, p);
+					break;				
 				default:
 					break;
-				}/* code */
+				}
 			} while (opcion !=3);
-			
-			
-			
 			break;
 		default:
 			break;
@@ -66,9 +76,24 @@ int menu(){
 int menu2() {
 	int opcion;
 	printf("¿Que información va introducir?\n");
-	printf("1. Operador\n");
-	printf("2. Numero\n");
-	printf("3. Salir\n");
+	printf("1. Numero\n");
+	printf("2. Operador\n");
+	printf("3. Notación final\n");
 	scanf("%d", &opcion);
 	return opcion;
+}
+
+void notacionFinal(Cola *c, Pila * p){
+	while (c->lon != 0)
+	{
+		printf("%d", desencolar(c));
+	}
+	free(c);
+
+	while (p->log !=0)
+	{
+		printf("%c", pop(p));
+	}
+	free(p);
+	printf("\n");
 }

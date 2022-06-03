@@ -2,6 +2,15 @@
 #define __COLA_H_
 #include "CNODO.h"
 
+/**
+ * @brief Realizado el 18/05/2022
+ * Osnaya Martinez Emmanuel
+ * Palacios Barcelos Juan Antonio
+ * Romero Molina David
+ * Vigi Garduño Marco Alejandro
+ * 
+ */
+
 typedef struct Cola
 {
     int lon;
@@ -11,13 +20,8 @@ typedef struct Cola
 
 Cola* crear_cola();
 void encolar(Cola*, int);
-void desencolar(Cola*);
+int desencolar(Cola*);
 void imprimir_cola(Cola*);
-
-
-
-
-
 
 
 #endif

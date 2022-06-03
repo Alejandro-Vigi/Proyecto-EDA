@@ -1,6 +1,14 @@
 #ifndef __PNODO_H__
 #define __PNODO_H__
 #include <stdbool.h>
+/**
+ * @brief Realizado el 17/05/2022
+ * Osnaya Martinez Emmanuel
+ * Palacios Barcelos Juan Antonio
+ * Romero Molina David
+ * Vigi Garduño Marco Alejandro
+ * 
+ */
 
 
 typedef struct PNODO
